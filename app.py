@@ -6,12 +6,14 @@ from pyvis.network import Network
 import matplotlib.pyplot as plt
 
 from flask import Flask, request, jsonify, abort
+from flask_cors import CORS
 from MindMapGenerator import *
 
 
 load_dotenv()
 
 app = Flask(__name__, static_folder='static', static_url_path='/')
+CORS(app)
 
 default_model='gpt-3.5-turbo-0613'
 #default_model='gpt-4-0613'
